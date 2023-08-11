@@ -1,9 +1,17 @@
+import sqlite3 
+
 books_file = 'books.txt'
 
 
 def create_book_table():
-    with open(books_file, 'w') as file:
-        pass  # just to make sure the file is there
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
+
+    cursor.execute('CREATE TABLE books(name text primary key, author text , read integer)')
+    connection.commit()
+    connection.close()
+
+
 
 
 def get_all_books():
