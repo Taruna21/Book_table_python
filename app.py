@@ -17,7 +17,7 @@ def menu():
     user_input = input(USER_CHOICE)
     while user_input != 'q':
         if user_input == 'a':
-            prompt_add_book()
+            add_book()
         elif user_input == 'l':
             list_books()
         elif user_input == 'r':
@@ -28,9 +28,10 @@ def menu():
         user_input = input(USER_CHOICE)
 
 
-def prompt_add_book():
+def add_book():
     name = input('Enter the new book name: ')
     author = input('Enter the new book author: ')
+    
 
     database.add_book(name, author)
 
