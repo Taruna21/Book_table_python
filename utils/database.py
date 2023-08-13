@@ -30,3 +30,23 @@ def get_all_books():
 
     return books
 
+
+def mark_book_as_read(name):
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
+
+    cursor.execute('UPDATE books SET read=1 where name=?', (name,))
+  
+    connection.commit()
+    connection.close()
+
+   
+
+def delete_book(name):
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
+
+    cursor.execute('DELETE FROM books where name=?' ,(name,))
+  
+    connection.commit()
+    connection.close()
