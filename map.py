@@ -168,3 +168,7 @@ def country_name(names):
 
 country_names = ["Germany", "France", "Spain"]
 country_name(country_names)
+
+numbers = range(1, 21)
+print(*numbers, sep='\n ')
+
