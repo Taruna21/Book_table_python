@@ -1,3 +1,5 @@
+from collections import deque
+
 def add(a, b):
     return a + b
 
@@ -170,5 +172,49 @@ country_names = ["Germany", "France", "Spain"]
 country_name(country_names)
 
 numbers = range(1, 21)
-print(*numbers, sep='\n ')
+print(*numbers, sep='\n')
+
+base = deque([1, 2, 3, 4, 5])
+    
+# rotates base 2 steps to the left
+base.rotate(-2)  # deque([3, 4, 5, 1, 2])
+print(base) 
+# rotates base 3 steps to the right
+base.rotate(3)   # deque([5, 1, 2, 3, 4])
+
+base = deque([1, 2, 3])
+base.rotate()  #
+print(base) 
+
+
+names = ["John", "Anne", "Peter"]
+ages = [26, 31, 29]
+
+for i in range(len(names)):
+	print(f"{names[i]} is {ages[i]} years old.")
+        
+ames = ["John", "Anne", "Peter"]
+ages = [26, 31, 29]
+
+for name, age in zip(names, ages):
+	print(f"{name} is {age} years old.")
+        
+zipped = [("John", 26), ("Anne", 31), ("Peter", 29)]
+names, ages = zip(*zipped)
+
+print(names)  # ("John", "Anne", "Peter")
+print(ages)   # (26, 31, 29)
+
+from collections import namedtuple
+
+Student = namedtuple("Student", ["name", "age", "faculty"])
+
+names = ["John", "Steve", "Mary"]
+ages = [19, 20, 18]
+faculties = ["Politics", "Economics", "Engineering"]
+
+students = [
+    Student(*student_details)
+    for student_details in zip(names, ages, faculties)
+]
 
