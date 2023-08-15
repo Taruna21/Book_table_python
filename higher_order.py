@@ -8,3 +8,4 @@ Here are some examples of higher-order functions in Python:
 
 '''
 
+print('hello')
