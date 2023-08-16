@@ -218,3 +218,33 @@ students = [
     for student_details in zip(names, ages, faculties)
 ]
 
+
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(square, numbers)
+
+# Convert the result to a list (for Python 3)
+squared_numbers_list = list(squared_numbers)
+
+print(squared_numbers_list)  # Output: [1, 4, 9, 16, 25]
+
+
+'''
+
+In Python, map() is a built-in function that applies a 
+specified function to each item in an iterable (such as
+ a list, tuple, or other sequence) and returns a new 
+ iterable containing the results.It provides a concise
+ way to transform the elements of a collection without
+   using explicit loops.
+map(function, iterable)
+
+'''
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(lambda x: x ** 2, numbers)
+squared_numbers_list = list(squared_numbers)
+
+print(squared_numbers_list)  # Output: [1, 4, 9, 16, 25]
